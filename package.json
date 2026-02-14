@@ -1,0 +1,34 @@
+{
+  "name": "@skunkceo/superclaw",
+  "version": "1.0.0",
+  "description": "Superclaw CLI - Setup and manage your AI companion workspace",
+  "bin": {
+    "superclaw": "./bin/superclaw.js"
+  },
+  "main": "./bin/superclaw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skunkceo/superclaw-cli"
+  },
+  "keywords": [
+    "ai", 
+    "assistant", 
+    "clawdbot", 
+    "openclaw", 
+    "cli", 
+    "workspace", 
+    "superclaw"
+  ],
+  "author": "Skunk Global",
+  "license": "MIT",
+  "homepage": "https://github.com/skunkceo/superclaw-cli",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "readline": "^1.3.0"
+  }
+}
