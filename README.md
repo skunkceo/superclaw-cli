@@ -4,7 +4,7 @@ Your AI Companion Setup Tool - Create and manage AI workspaces with ease.
 
 ## Overview
 
-Superclaw CLI helps you set up and manage workspaces for AI assistants like Clawdbot and OpenClaw. It provides a guided setup process, personality configuration, channel connections, and ongoing management tools.
+Superclaw CLI helps you set up and manage workspaces for AI assistants like OpenClaw. It provides a guided setup process, personality configuration, channel connections, and ongoing management tools.
 
 ## Installation
 
@@ -70,8 +70,7 @@ superclaw-workspace/
 
 Superclaw supports multiple AI backends:
 
-- **Clawdbot** - Cloud-based, easy setup
-- **OpenClaw** - Self-hosted, more control
+- **OpenClaw** - Self-hosted AI assistant for WordPress
 - **Other** - Manual configuration for custom setups
 
 ## Channels
@@ -239,6 +238,5 @@ MIT License - see LICENSE file for details
 
 ## Related Projects
 
-- [Clawdbot](https://clawdbot.com) - Cloud AI assistant platform
-- [OpenClaw](https://github.com/skunkceo/openclaw) - Self-hosted AI assistant
+- [OpenClaw](https://github.com/skunkceo/openclaw) - Self-hosted AI assistant for WordPress
 - [Skunk CLI](https://github.com/skunkceo/skunk-cli) - WordPress/AI integration tools
