@@ -4,7 +4,7 @@ Your AI Companion Setup Tool - Create and manage AI workspaces with ease.
 
 ## Overview
 
-Superclaw CLI helps you set up and manage workspaces for AI assistants like OpenClaw. It provides a guided setup process, personality configuration, channel connections, and ongoing management tools.
+Superclaw CLI helps you set up and manage workspaces for OpenClaw. It provides a guided setup process, personality configuration, channel connections, and ongoing management tools.
 
 ## Installation
 
