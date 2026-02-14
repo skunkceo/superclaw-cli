@@ -4,6 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+// Import shared utilities (must be first to avoid circular deps)
+const { colors, success, warn, error, info, showLogo } = require('../lib/utils');
+
 // Import command handlers
 const initCommand = require('../lib/commands/init');
 const soulCommand = require('../lib/commands/soul');
@@ -13,47 +16,7 @@ const moduleCommand = require('../lib/commands/module');
 const statusCommand = require('../lib/commands/status');
 const costsCommand = require('../lib/commands/costs');
 const doctorCommand = require('../lib/commands/doctor');
-
-const colors = {
-  reset: '\x1b[0m',
-  bright: '\x1b[1m',
-  dim: '\x1b[2m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  red: '\x1b[31m',
-  cyan: '\x1b[36m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m'
-};
-
-function success(msg) { console.log(`${colors.green}✓${colors.reset} ${msg}`); }
-function warn(msg) { console.log(`${colors.yellow}!${colors.reset} ${msg}`); }
-function error(msg) { console.log(`${colors.red}✗${colors.reset} ${msg}`); }
-function info(msg) { console.log(`${colors.blue}i${colors.reset} ${msg}`); }
-
-// ASCII Art Logo
-function showLogo() {
-  console.log(`${colors.cyan}
-   ╔═════════════════════════════════════════╗
-   ║                                         ║
-   ║   ███████ ██    ██ ██████  ███████     ║
-   ║   ██      ██    ██ ██   ██ ██          ║
-   ║   ███████ ██    ██ ██████  █████       ║
-   ║        ██ ██    ██ ██      ██          ║
-   ║   ███████  ██████  ██      ███████     ║
-   ║                                         ║
-   ║          ██████ ██       █████ ██     ██║
-   ║         ██      ██      ██   ██ ██     ██║
-   ║         ██      ██      ███████ ██  █  ██║
-   ║         ██      ██      ██   ██ ██ ███ ██║
-   ║          ██████ ███████ ██   ██  ███ ███ ║
-   ║                                         ║
-   ╚═════════════════════════════════════════╝${colors.reset}
-   
-   ${colors.bright}Your AI Companion Setup Tool${colors.reset}
-   
-`);
-}
+const setupCommand = require('../lib/commands/setup');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -86,6 +49,9 @@ switch (command) {
   case 'doctor':
     doctorCommand.run(subArgs);
     break;
+  case 'setup':
+    setupCommand.run(subArgs);
+    break;
   case 'help':
   case '--help':
   case '-h':
@@ -107,6 +73,11 @@ function showHelp() {
   showLogo();
   console.log(`${colors.bright}Usage:${colors.reset}
   superclaw init                    Guided first-time setup
+  superclaw setup                   Create dashboard admin user
+  superclaw setup user add <email>  Add dashboard user
+  superclaw setup user list         List all users
+  superclaw setup user delete <e>   Delete user by email
+  superclaw setup user reset <e>    Reset user password
   superclaw soul                    Configure AI personality  
   superclaw connect                 Add channels (slack, discord, telegram)
   superclaw memory                  Set up memory system
@@ -119,6 +90,8 @@ function showHelp() {
 
 ${colors.bright}Examples:${colors.reset}
   superclaw init                    # Start here! Full setup wizard
+  superclaw setup                   # Create first dashboard admin
+  superclaw setup user add joe@x.com --role edit  # Add user
   superclaw soul                    # Customize your AI's personality
   superclaw connect                 # Set up Slack, Discord, etc.
   superclaw status                  # Check if everything's working
@@ -137,12 +110,5 @@ function showVersion() {
   console.log(`${colors.cyan}Superclaw CLI${colors.reset} v${packageJson.version}`);
 }
 
-// Export utilities for commands
-module.exports = {
-  colors,
-  success,
-  warn,
-  error,
-  info,
-  showLogo
-};
+// Re-export utilities for backwards compatibility
+module.exports = require('../lib/utils');
