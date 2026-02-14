@@ -17,6 +17,7 @@ const statusCommand = require('../lib/commands/status');
 const costsCommand = require('../lib/commands/costs');
 const doctorCommand = require('../lib/commands/doctor');
 const setupCommand = require('../lib/commands/setup');
+const updateCommand = require('../lib/commands/update');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -52,6 +53,10 @@ switch (command) {
   case 'setup':
     setupCommand.run(subArgs);
     break;
+  case 'update':
+  case 'upgrade':
+    updateCommand.run(subArgs);
+    break;
   case 'help':
   case '--help':
   case '-h':
@@ -84,6 +89,8 @@ function showHelp() {
   superclaw module <name>           Install capability modules
   superclaw status                  Health check + diagnostics
   superclaw costs                   Token usage + optimization tips
+  superclaw update                  Update CLI and dashboard
+  superclaw update --check          Check for available updates
   superclaw doctor                  Troubleshoot common issues
   superclaw help                    Show this help
   superclaw version                 Show version
