@@ -1,153 +1,102 @@
-# Superclaw CLI
+# SuperClaw CLI
 
-Your AI Companion Setup Tool - Create and manage AI workspaces with ease.
+Command-line tool for installing and managing SuperClaw - the beautiful web dashboard for OpenClaw.
 
 ## Overview
 
-Superclaw CLI helps you set up and manage workspaces for OpenClaw. It provides a guided setup process, personality configuration, channel connections, and ongoing management tools.
+SuperClaw CLI helps you install the dashboard, manage Pro features, and configure your OpenClaw setup.
 
 ## Installation
 
 ```bash
-npm install -g @skunkceo/superclaw
+npm install -g @skunkceo/superclaw-cli
 ```
 
 ## Quick Start
 
 ```bash
-# Create your first AI workspace
+# Install SuperClaw dashboard
 superclaw init
 
-# Customize your AI's personality
-superclaw soul
-
-# Connect to Slack, Discord, etc.
-superclaw connect
-
-# Check everything is working
+# Check status
 superclaw status
+
+# Upgrade to Pro (requires license)
+superclaw pro install <your-license-key>
 ```
+
+## Free vs Pro
+
+**Free Tier:**
+- Dashboard overview
+- Chat interface  
+- Sessions management
+- Agent monitoring
+- Workspace file browser
+- Error tracking
+
+**Pro Tier** (requires license from [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)):
+- Smart Router - AI model selection and routing
+- Settings - Advanced configuration
+- Team - Multi-user management
+- Tasks - Project tracking
+- Stats - Advanced analytics
+- Skills - Skills marketplace
+- Command - Command palette
+- Scheduled - Job scheduling
 
 ## Commands
 
-### Setup & Configuration
+### Installation & Setup
 
-- **`superclaw init`** - Guided first-time setup wizard
-- **`superclaw soul`** - Configure AI personality and behavior
-- **`superclaw connect`** - Add communication channels (Slack, Discord, Telegram, WhatsApp)
-
-### Management & Monitoring
-
-- **`superclaw status`** - Health check and diagnostics
-- **`superclaw memory`** - Set up and manage memory system
-- **`superclaw module <name>`** - Install capability modules
-- **`superclaw costs`** - Token usage and optimization tips
-- **`superclaw doctor`** - Troubleshoot common issues
+- **`superclaw init`** - Install SuperClaw dashboard
+- **`superclaw setup`** - Create dashboard admin user
+- **`superclaw setup user add <email>`** - Add dashboard user
+- **`superclaw setup user list`** - List all users
+- **`superclaw setup user delete <email>`** - Delete user
+- **`superclaw setup user reset <email>`** - Reset user password
 
 ### Pro Features
 
-- **`superclaw pro status`** - Check license status
+- **`superclaw pro status`** - Check Pro license status
 - **`superclaw pro install <key>`** - Install Pro features with license key
+
+### Updates & Maintenance
+
+- **`superclaw update`** - Update CLI and dashboard
+- **`superclaw update --check`** - Check for available updates
+- **`superclaw doctor`** - Troubleshoot common issues
+- **`superclaw status`** - Health check and diagnostics
 
 ### Information
 
-- **`superclaw help`** - Show command help
-- **`superclaw version`** - Show version information
+- **`superclaw help`** - Show all commands
+- **`superclaw version`** - Show version info
 
-## Workspace Structure
+## How It Works
 
-When you run `superclaw init`, it creates a workspace with these files:
+**Installation Flow:**
 
-```
-superclaw-workspace/
-├── superclaw-config.json    # Main configuration
-├── SOUL.md                  # AI personality definition
-├── USER.md                  # Information about you
-├── AGENTS.md                # Workspace guidelines
-├── MEMORY.md                # Long-term memory
-├── memory/                  # Daily memory files
-│   └── YYYY-MM-DD.md
-└── modules/                 # Installed capability modules
-    └── <module-name>/
-```
+1. `npm install -g @skunkceo/superclaw-cli` - Install CLI globally
+2. `superclaw init` - Clones free dashboard from GitHub, installs locally
+3. `superclaw setup` - Creates first admin user
+4. Dashboard runs on `http://localhost:3000`
 
-## AI Backends
+**Upgrading to Pro:**
 
-Superclaw supports multiple AI backends:
+1. Purchase license from [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)
+2. `superclaw pro install <license-key>` - Validates license, downloads Pro package
+3. Pro features automatically merge into your dashboard
+4. Restart dashboard to see new features
 
-- **OpenClaw** - Self-hosted AI assistant for WordPress
-- **Other** - Manual configuration for custom setups
+## Architecture
 
-## Channels
+SuperClaw consists of two repositories:
 
-Connect your AI to various communication platforms:
+- **superclaw-dashboard** (public) - Free tier features
+- **superclaw-dashboard-pro** (private) - Pro features
 
-- **Slack** - Bot tokens, Socket Mode support
-- **Discord** - Bot integration with servers
-- **Telegram** - Bot creation via @BotFather
-- **WhatsApp** - Business API integration
-
-## Modules
-
-Extend your AI's capabilities with modules:
-
-- **web-search** - Search and fetch web content
-- **email** - IMAP/SMTP email integration
-- **calendar** - Google Calendar, Outlook integration
-- **task-management** - Todoist, Linear, GitHub Issues
-- **file-ops** - Advanced file operations
-- **social-media** - Twitter, LinkedIn, Reddit
-- **analytics** - Google Analytics, reporting
-- **coding** - Git, code review, deployment
-
-```bash
-# List available modules
-superclaw module available
-
-# Install a module
-superclaw module web-search
-
-# List installed modules
-superclaw module list
-```
-
-## Memory System
-
-Your AI maintains context through a memory system:
-
-- **Daily files** - Raw logs of daily interactions
-- **Long-term memory** - Curated important information
-- **Auto-cleanup** - Configurable retention policies
-- **Archiving** - Compress old files to save space
-
-```bash
-# Configure memory retention
-superclaw memory
-
-# View memory statistics
-superclaw memory stats
-
-# Backup memory files
-superclaw memory backup
-```
-
-## Cost Optimization
-
-Monitor and optimize AI usage costs:
-
-```bash
-# View cost analysis
-superclaw costs
-
-# Get optimization tips
-superclaw costs optimize
-
-# Compare model pricing
-superclaw costs models
-
-# Estimate costs for your setup
-superclaw costs estimate
-```
+The CLI manages installation of both. Pro features are protected by license validation and require access to the private repository.
 
 ## Troubleshooting
 
@@ -161,87 +110,53 @@ superclaw doctor
 superclaw status
 ```
 
-Common issues and solutions:
+Common issues:
 
-### "No workspace found"
-- Run `superclaw init` to create a workspace
-- Make sure you're in the right directory
+**Dashboard won't start**
+- Check if port 3000 is already in use
+- Make sure Node.js is installed: `node --version`
+- Try rebuilding: `cd <dashboard-path> && npm run build`
 
-### "Configuration corrupted"
-- Check JSON syntax in `superclaw-config.json`
-- Re-run `superclaw init` to recreate
+**Pro installation fails**
+- Verify license key is correct
+- Check GitHub authentication: `gh auth status`
+- Make sure you have access to the private Pro repo
 
-### "Channel connection failed"
-- Verify API tokens and credentials
-- Check network connectivity
-- Review channel-specific documentation
-
-### "Module not working"
-- Check `config.json` has real values (not placeholders)
-- Ensure module is enabled in `module.json`
-- Run `superclaw status` to see module status
+**Updates not applying**
+- Run `superclaw update` to get latest versions
+- Restart the dashboard after updates
+- Clear browser cache if UI doesn't update
 
 ## Development
 
+To contribute or modify SuperClaw:
+
 ```bash
-# Clone the repository
+# Clone the repos
 git clone https://github.com/skunkceo/superclaw-cli.git
+git clone https://github.com/skunkceo/superclaw-dashboard.git
 
-# Install dependencies
+# Link CLI locally
 cd superclaw-cli
-npm install
-
-# Test locally
-node bin/superclaw.js help
-
-# Link for global testing
 npm link
+
+# Now 'superclaw' command uses your local version
 ```
-
-## File Structure
-
-```
-superclaw-cli/
-├── bin/
-│   └── superclaw.js           # Main CLI entry point
-├── lib/
-│   ├── commands/              # Command implementations
-│   │   ├── init.js
-│   │   ├── soul.js
-│   │   ├── connect.js
-│   │   ├── memory.js
-│   │   ├── module.js
-│   │   ├── status.js
-│   │   ├── costs.js
-│   │   └── doctor.js
-│   └── templates/             # Workspace file templates
-│       ├── SOUL.md
-│       ├── USER.md
-│       ├── AGENTS.md
-│       └── MEMORY.md
-├── package.json
-└── README.md
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT License - See LICENSE file for details
+
+**Pro package:** Proprietary - Requires valid license from [skunkglobal.com](https://skunkglobal.com)
+
+## Links
+
+- Dashboard (Free): [github.com/skunkceo/superclaw-dashboard](https://github.com/skunkceo/superclaw-dashboard)
+- CLI: [github.com/skunkceo/superclaw-cli](https://github.com/skunkceo/superclaw-cli)
+- Purchase Pro: [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)
+- OpenClaw: [github.com/openclaw/openclaw](https://github.com/openclaw/openclaw)
 
 ## Support
 
-- Documentation: [GitHub Wiki](https://github.com/skunkceo/superclaw-cli/wiki)
-- Issues: [GitHub Issues](https://github.com/skunkceo/superclaw-cli/issues)
-- Community: [Discord Server](https://discord.gg/superclaw)
-
-## Related Projects
-
-- [OpenClaw](https://github.com/skunkceo/openclaw) - Self-hosted AI assistant for WordPress
-- [Skunk CLI](https://github.com/skunkceo/skunk-cli) - WordPress/AI integration tools
+- GitHub Issues: [github.com/skunkceo/superclaw-cli/issues](https://github.com/skunkceo/superclaw-cli/issues)
+- Documentation: [docs.openclaw.ai](https://docs.openclaw.ai)
