@@ -1,6 +1,6 @@
 {
   "name": "@skunkceo/superclaw",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Superclaw CLI - Setup and manage your AI companion workspace",
   "bin": {
     "superclaw": "./bin/superclaw.js"
@@ -14,12 +14,12 @@
     "url": "https://github.com/skunkceo/superclaw-cli"
   },
   "keywords": [
-    "ai", 
-    "assistant", 
-    "openclaw", 
+    "ai",
+    "assistant",
+    "openclaw",
     "wordpress",
-    "cli", 
-    "workspace", 
+    "cli",
+    "workspace",
     "superclaw"
   ],
   "author": "Skunk Global",
