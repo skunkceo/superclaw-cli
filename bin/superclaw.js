@@ -19,6 +19,7 @@ const doctorCommand = require('../lib/commands/doctor');
 const setupCommand = require('../lib/commands/setup');
 const updateCommand = require('../lib/commands/update');
 const localModelCommand = require('../lib/commands/localmodel');
+const proCommand = require('../lib/commands/pro');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -57,6 +58,10 @@ switch (command) {
   case 'update':
   case 'upgrade':
     updateCommand.run(subArgs);
+    break;
+  case 'pro':
+  case 'license':
+    proCommand.run(subArgs);
     break;
   case 'localmodel':
   case 'local':
@@ -109,6 +114,8 @@ function showHelp() {
   superclaw costs                   Token usage + optimization tips
   superclaw update                  Update CLI and dashboard
   superclaw update --check          Check for available updates
+  superclaw pro status              Check Pro license status
+  superclaw pro install <key>       Install Pro features
   superclaw doctor                  Troubleshoot common issues
   superclaw help                    Show this help
   superclaw version                 Show version

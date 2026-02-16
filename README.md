@@ -44,6 +44,11 @@ superclaw status
 - **`superclaw costs`** - Token usage and optimization tips
 - **`superclaw doctor`** - Troubleshoot common issues
 
+### Pro Features
+
+- **`superclaw pro status`** - Check license status
+- **`superclaw pro install <key>`** - Install Pro features with license key
+
 ### Information
 
 - **`superclaw help`** - Show command help
