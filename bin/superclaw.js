@@ -18,6 +18,7 @@ const costsCommand = require('../lib/commands/costs');
 const doctorCommand = require('../lib/commands/doctor');
 const setupCommand = require('../lib/commands/setup');
 const updateCommand = require('../lib/commands/update');
+const localModelCommand = require('../lib/commands/localmodel');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -57,6 +58,20 @@ switch (command) {
   case 'upgrade':
     updateCommand.run(subArgs);
     break;
+  case 'localmodel':
+  case 'local':
+    const subcommand = subArgs[0] || 'setup';
+    if (subcommand === 'setup') {
+      localModelCommand.setupLocalModel();
+    } else if (subcommand === 'list') {
+      localModelCommand.listLocalModels();
+    } else if (subcommand === 'test') {
+      localModelCommand.testLocalModel();
+    } else {
+      console.log(`${colors.red}Unknown localmodel subcommand: ${subcommand}${colors.reset}`);
+      console.log('Available: setup, list, test');
+    }
+    break;
   case 'help':
   case '--help':
   case '-h':
@@ -87,6 +102,9 @@ function showHelp() {
   superclaw connect                 Add channels (slack, discord, telegram)
   superclaw memory                  Set up memory system
   superclaw module <name>           Install capability modules
+  superclaw localmodel setup        Install local AI model (Ollama)
+  superclaw localmodel list         List installed local models
+  superclaw localmodel test         Test local model
   superclaw status                  Health check + diagnostics
   superclaw costs                   Token usage + optimization tips
   superclaw update                  Update CLI and dashboard
