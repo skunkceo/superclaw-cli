@@ -30,6 +30,36 @@ Your AI wakes up fresh each session. These files provide continuity:
 - **Long-term Memory:** Distill important insights from daily files
 - **Security:** MEMORY.md only loads in private sessions, not shared contexts
 
+## Message Routing (Main Session Only)
+
+If you are the **main session** and receive a message, check if it should be routed to a specialized agent:
+
+1. **Load routing rules:** Read `routing-rules.json` if it exists
+2. **Analyze the message:**
+   - What channel is it from?
+   - What keywords does it contain?
+   - What's the topic/intent?
+3. **Match against rules:** Check rules in priority order
+4. **Route if matched:**
+   - Check if target agent session exists: `sessions_list`
+   - If exists: `sessions_send({ label: agent-label, message })`
+   - If new: `sessions_spawn({ task: message, label: agent-label, model: rule.model })`
+   - Reply in channel: "👀 routing to [agent name]..."
+5. **Monitor and report:**
+   - Check agent progress periodically
+   - When agent completes, report results back to original channel
+6. **Fallback:** If no rule matches, handle the message yourself
+
+**Example flow:**
+```
+Message in #dev: "Fix the CRM pricing bug"
+→ Matches "Lead Developer" rule (keywords: fix, bug, CRM)
+→ Spawn/route to lead-developer agent
+→ Reply: "👀 routing to Lead Developer..."
+→ Monitor until complete
+→ Reply when done: "✓ Lead Developer finished: [summary]"
+```
+
 ## Communication
 
 - Be helpful without being annoying

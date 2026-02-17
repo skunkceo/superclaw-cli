@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "dev-1",
+      "name": "Lead Developer - Code & Infrastructure",
+      "enabled": true,
+      "priority": 1,
+      "conditions": {
+        "channels": ["#dev", "#engineering"],
+        "keywords": ["code", "bug", "deploy", "PR", "merge", "build", "error", "fix", "debug", "server", "database", "git", "commit", "push", "infrastructure"]
+      },
+      "action": {
+        "agent": "lead-developer",
+        "model": "claude-sonnet-4",
+        "spawnNew": false
+      }
+    },
+    {
+      "id": "design-1",
+      "name": "Lead Designer - UI/UX",
+      "enabled": true,
+      "priority": 2,
+      "conditions": {
+        "channels": ["#design", "#product"],
+        "keywords": ["design", "UI", "UX", "mockup", "wireframe", "visual", "layout", "style", "color", "font", "spacing", "responsive", "component"]
+      },
+      "action": {
+        "agent": "lead-designer",
+        "model": "claude-sonnet-4",
+        "spawnNew": false
+      }
+    },
+    {
+      "id": "marketing-1",
+      "name": "Marketing Lead - Content & Growth",
+      "enabled": true,
+      "priority": 3,
+      "conditions": {
+        "channels": ["#marketing", "#growth", "#content"],
+        "keywords": ["SEO", "content", "blog", "social", "marketing", "growth", "keyword", "competitor", "analytics", "campaign", "post"]
+      },
+      "action": {
+        "agent": "marketing-lead",
+        "model": "claude-haiku-4",
+        "spawnNew": false
+      }
+    },
+    {
+      "id": "support-1",
+      "name": "Support Lead - Customer Questions",
+      "enabled": true,
+      "priority": 4,
+      "conditions": {
+        "channels": ["#support", "#customers"],
+        "keywords": ["help", "issue", "problem", "question", "how to", "error", "not working", "support", "stuck", "documentation"]
+      },
+      "action": {
+        "agent": "support-lead",
+        "model": "claude-haiku-4",
+        "spawnNew": false
+      }
+    },
+    {
+      "id": "product-1",
+      "name": "Product Manager - Planning & Roadmap",
+      "enabled": true,
+      "priority": 5,
+      "conditions": {
+        "channels": ["#product", "#planning", "#roadmap"],
+        "keywords": ["roadmap", "feature", "priority", "sprint", "release", "planning", "requirement", "story", "backlog", "milestone"]
+      },
+      "action": {
+        "agent": "product-manager",
+        "model": "claude-sonnet-4",
+        "spawnNew": false
+      }
+    }
+  ],
+  "fallback": {
+    "agent": "main",
+    "notify": true
+  }
+}
