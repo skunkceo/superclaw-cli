@@ -1,0 +1,129 @@
+{
+  "version": "1.0",
+  "volumePath": "/mnt/HC_Volume_104694326/agent-sandboxes",
+  "maxConcurrentSandboxes": 10,
+  "maxSandboxSizeGB": 1,
+  "agents": {
+    "martech-engineer": {
+      "name": "MarTech Engineer",
+      "emoji": "🔧",
+      "repositories": [
+        {
+          "name": "skunkglobal.com",
+          "path": "/home/mike/apps/websites/skunkglobal",
+          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
+          "branchPrefix": "martech"
+        },
+        {
+          "name": "marketing.skunkglobal.com",
+          "path": "/home/mike/apps/websites/growth-marketing",
+          "remote": "git@github.com:skunkceo/growth-marketing.git",
+          "branchPrefix": "martech"
+        },
+        {
+          "name": "status.skunkglobal.com",
+          "path": "/home/mike/apps/websites/status",
+          "remote": "git@github.com:skunkceo/status-page.git",
+          "branchPrefix": "martech"
+        },
+        {
+          "name": "superclaw-dashboard",
+          "path": "/home/mike/apps/websites/superclaw-dashboard",
+          "remote": "git@github.com:skunkceo/superclaw-dashboard.git",
+          "branchPrefix": "martech"
+        }
+      ]
+    },
+    "crm-engineer": {
+      "name": "CRM Engineer",
+      "emoji": "💼",
+      "repositories": [
+        {
+          "name": "skunkcrm-pro",
+          "path": "/home/mike/apps/websites/plugins/skunkcrm-pro",
+          "remote": "git@github.com:skunkceo/skunkcrm-pro.git",
+          "branchPrefix": "crm"
+        },
+        {
+          "name": "skunkcrm",
+          "path": "/home/mike/apps/websites/plugins/skunkcrm",
+          "remote": "git@github.com:skunkceo/skunkcrm.git",
+          "branchPrefix": "crm"
+        }
+      ]
+    },
+    "seo-specialist": {
+      "name": "SEO Specialist",
+      "emoji": "🔍",
+      "repositories": [
+        {
+          "name": "skunkglobal.com",
+          "path": "/home/mike/apps/websites/skunkglobal",
+          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
+          "branchPrefix": "seo"
+        },
+        {
+          "name": "skunkcrm.com",
+          "path": "/home/mike/apps/websites/skunkcrm",
+          "remote": "git@github.com:skunkceo/skunkcrm.com.git",
+          "branchPrefix": "seo"
+        },
+        {
+          "name": "skunkforms.com",
+          "path": "/home/mike/apps/websites/skunkforms",
+          "remote": "git@github.com:skunkceo/skunkforms.com.git",
+          "branchPrefix": "seo"
+        },
+        {
+          "name": "skunkpages.com",
+          "path": "/home/mike/apps/websites/skunkpages",
+          "remote": "git@github.com:skunkceo/skunkpages.com.git",
+          "branchPrefix": "seo"
+        }
+      ]
+    },
+    "lead-developer": {
+      "name": "Lead Developer",
+      "emoji": "🛠️",
+      "repositories": "all"
+    },
+    "lead-designer": {
+      "name": "Lead Designer",
+      "emoji": "🎨",
+      "repositories": "all"
+    },
+    "marketing-lead": {
+      "name": "Marketing Lead",
+      "emoji": "📈",
+      "repositories": [
+        {
+          "name": "skunkglobal.com",
+          "path": "/home/mike/apps/websites/skunkglobal",
+          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
+          "branchPrefix": "marketing"
+        },
+        {
+          "name": "marketing.skunkglobal.com",
+          "path": "/home/mike/apps/websites/growth-marketing",
+          "remote": "git@github.com:skunkceo/growth-marketing.git",
+          "branchPrefix": "marketing"
+        }
+      ]
+    },
+    "support-lead": {
+      "name": "Support Lead",
+      "emoji": "💬",
+      "repositories": []
+    },
+    "product-manager": {
+      "name": "Product Manager",
+      "emoji": "📋",
+      "repositories": []
+    }
+  },
+  "sandboxScripts": {
+    "create": "scripts/create-agent-sandbox.sh",
+    "cleanup": "scripts/cleanup-agent-sandbox.sh",
+    "monitor": "scripts/monitor-agent-sandboxes.sh"
+  }
+}
