@@ -1,6 +1,6 @@
 {
   "name": "@skunkceo/superclaw-cli",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Superclaw CLI - Setup and manage your AI companion workspace",
   "bin": {
     "superclaw": "./bin/superclaw.js"
