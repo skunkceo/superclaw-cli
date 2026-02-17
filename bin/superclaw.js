@@ -20,6 +20,7 @@ const setupCommand = require('../lib/commands/setup');
 const updateCommand = require('../lib/commands/update');
 const localModelCommand = require('../lib/commands/localmodel');
 const proCommand = require('../lib/commands/pro');
+const setupAgentsCommand = require('../lib/commands/setup-agents');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -53,7 +54,11 @@ switch (command) {
     doctorCommand.run(subArgs);
     break;
   case 'setup':
-    setupCommand.run(subArgs);
+    if (subArgs[0] === 'agents') {
+      setupAgentsCommand.run(subArgs.slice(1));
+    } else {
+      setupCommand.run(subArgs);
+    }
     break;
   case 'update':
   case 'upgrade':
@@ -99,6 +104,7 @@ function showHelp() {
   console.log(`${colors.bright}Usage:${colors.reset}
   superclaw init                    Guided first-time setup
   superclaw setup                   Create dashboard admin user
+  superclaw setup agents            Configure specialized agents
   superclaw setup user add <email>  Add dashboard user
   superclaw setup user list         List all users
   superclaw setup user delete <e>   Delete user by email
