@@ -22,6 +22,7 @@ const localModelCommand = require('../lib/commands/localmodel');
 const proCommand = require('../lib/commands/pro');
 const setupAgentsCommand = require('../lib/commands/setup-agents');
 const fixEnvCommand = require('../lib/commands/fix-env');
+const dashboardCommand = require('../lib/commands/dashboard');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -73,6 +74,10 @@ switch (command) {
   case 'fix':
     fixEnvCommand.run(subArgs);
     break;
+  case 'dashboard':
+  case 'dash':
+    dashboardCommand.run(subArgs);
+    break;
   case 'localmodel':
   case 'local':
     const subcommand = subArgs[0] || 'setup';
@@ -115,6 +120,10 @@ function showHelp() {
   superclaw setup user delete <e>   Delete user by email
   superclaw setup user reset <e>    Reset user password
   superclaw fix-env                 Fix dashboard workspace connection
+  superclaw dashboard start         Start the dashboard
+  superclaw dashboard stop          Stop the dashboard
+  superclaw dashboard restart       Restart the dashboard
+  superclaw dashboard status        Check dashboard status
   superclaw soul                    Configure AI personality  
   superclaw connect                 Add channels (slack, discord, telegram)
   superclaw memory                  Set up memory system
