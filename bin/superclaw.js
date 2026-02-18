@@ -23,6 +23,7 @@ const proCommand = require('../lib/commands/pro');
 const setupAgentsCommand = require('../lib/commands/setup-agents');
 const fixEnvCommand = require('../lib/commands/fix-env');
 const dashboardCommand = require('../lib/commands/dashboard');
+const agentsSpawnCommand = require('../lib/commands/agents-spawn');
 
 // Parse arguments
 const args = process.argv.slice(2);
@@ -60,6 +61,15 @@ switch (command) {
       setupAgentsCommand.run(subArgs.slice(1));
     } else {
       setupCommand.run(subArgs);
+    }
+    break;
+  case 'agents':
+    if (subArgs[0] === 'spawn') {
+      agentsSpawnCommand.run(subArgs.slice(1));
+    } else {
+      console.log(`${colors.yellow}Unknown agents subcommand: ${subArgs[0] || 'none'}${colors.reset}`);
+      console.log('Available: spawn');
+      console.log(`\nExample: ${colors.cyan}superclaw agents spawn${colors.reset}\n`);
     }
     break;
   case 'update':
@@ -120,6 +130,7 @@ function showHelp() {
   superclaw setup user delete <e>   Delete user by email
   superclaw setup user reset <e>    Reset user password
   superclaw fix-env                 Fix dashboard workspace connection
+  superclaw agents spawn            Test spawn agents (normally auto-spawned)
   superclaw dashboard start         Start the dashboard
   superclaw dashboard stop          Stop the dashboard
   superclaw dashboard restart       Restart the dashboard
