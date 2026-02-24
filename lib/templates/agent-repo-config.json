@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "volumePath": "~/.superclaw/agent-sandboxes",
+  "maxConcurrentSandboxes": 10,
+  "maxSandboxSizeGB": 1,
+  "agents": {
+    "martech-engineer": {
+      "name": "MarTech Engineer",
+      "emoji": "🔧",
+      "repositories": [
+        {
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
+          "branchPrefix": "martech"
+        },
+        {
+          "name": "marketing",
+          "path": "~/apps/websites/marketing",
+          "remote": "git@github.com:yourorg/marketing.git",
+          "branchPrefix": "martech"
+        },
+        {
+          "name": "dashboard",
+          "path": "~/apps/websites/superclaw-dashboard",
+          "remote": "git@github.com:yourorg/superclaw-dashboard.git",
+          "branchPrefix": "martech"
+        }
+      ]
+    },
+    "crm-engineer": {
+      "name": "CRM Engineer",
+      "emoji": "💼",
+      "repositories": [
+        {
+          "name": "crm-plugin",
+          "path": "~/apps/websites/plugins/crm-plugin",
+          "remote": "git@github.com:yourorg/crm-plugin.git",
+          "branchPrefix": "crm"
+        }
+      ]
+    },
+    "seo-specialist": {
+      "name": "SEO Specialist",
+      "emoji": "🔍",
+      "repositories": [
+        {
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
+          "branchPrefix": "seo"
+        }
+      ]
+    },
+    "lead-developer": {
+      "name": "Lead Developer",
+      "emoji": "🛠️",
+      "repositories": "all"
+    },
+    "lead-designer": {
+      "name": "Lead Designer",
+      "emoji": "🎨",
+      "repositories": "all"
+    },
+    "marketing-lead": {
+      "name": "Marketing Lead",
+      "emoji": "📈",
+      "repositories": [
+        {
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
+          "branchPrefix": "marketing"
+        }
+      ]
+    },
+    "support-lead": {
+      "name": "Support Lead",
+      "emoji": "💬",
+      "repositories": []
+    },
+    "product-manager": {
+      "name": "Product Manager",
+      "emoji": "📋",
+      "repositories": []
+    }
+  },
+  "sandboxScripts": {
+    "create": "scripts/create-agent-sandbox.sh",
+    "cleanup": "scripts/cleanup-agent-sandbox.sh",
+    "monitor": "scripts/monitor-agent-sandboxes.sh"
+  }
+}
