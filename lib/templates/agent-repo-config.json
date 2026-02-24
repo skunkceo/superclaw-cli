@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "volumePath": "/mnt/HC_Volume_104694326/agent-sandboxes",
+  "volumePath": "~/.superclaw/agent-sandboxes",
   "maxConcurrentSandboxes": 10,
   "maxSandboxSizeGB": 1,
   "agents": {
@@ -9,27 +9,21 @@
       "emoji": "🔧",
       "repositories": [
         {
-          "name": "skunkglobal.com",
-          "path": "/home/mike/apps/websites/skunkglobal",
-          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
           "branchPrefix": "martech"
         },
         {
-          "name": "marketing.skunkglobal.com",
-          "path": "/home/mike/apps/websites/growth-marketing",
-          "remote": "git@github.com:skunkceo/growth-marketing.git",
+          "name": "marketing",
+          "path": "~/apps/websites/marketing",
+          "remote": "git@github.com:yourorg/marketing.git",
           "branchPrefix": "martech"
         },
         {
-          "name": "status.skunkglobal.com",
-          "path": "/home/mike/apps/websites/status",
-          "remote": "git@github.com:skunkceo/status-page.git",
-          "branchPrefix": "martech"
-        },
-        {
-          "name": "superclaw-dashboard",
-          "path": "/home/mike/apps/websites/superclaw-dashboard",
-          "remote": "git@github.com:skunkceo/superclaw-dashboard.git",
+          "name": "dashboard",
+          "path": "~/apps/websites/superclaw-dashboard",
+          "remote": "git@github.com:yourorg/superclaw-dashboard.git",
           "branchPrefix": "martech"
         }
       ]
@@ -39,15 +33,9 @@
       "emoji": "💼",
       "repositories": [
         {
-          "name": "skunkcrm-pro",
-          "path": "/home/mike/apps/websites/plugins/skunkcrm-pro",
-          "remote": "git@github.com:skunkceo/skunkcrm-pro.git",
-          "branchPrefix": "crm"
-        },
-        {
-          "name": "skunkcrm",
-          "path": "/home/mike/apps/websites/plugins/skunkcrm",
-          "remote": "git@github.com:skunkceo/skunkcrm.git",
+          "name": "crm-plugin",
+          "path": "~/apps/websites/plugins/crm-plugin",
+          "remote": "git@github.com:yourorg/crm-plugin.git",
           "branchPrefix": "crm"
         }
       ]
@@ -57,27 +45,9 @@
       "emoji": "🔍",
       "repositories": [
         {
-          "name": "skunkglobal.com",
-          "path": "/home/mike/apps/websites/skunkglobal",
-          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
-          "branchPrefix": "seo"
-        },
-        {
-          "name": "skunkcrm.com",
-          "path": "/home/mike/apps/websites/skunkcrm",
-          "remote": "git@github.com:skunkceo/skunkcrm.com.git",
-          "branchPrefix": "seo"
-        },
-        {
-          "name": "skunkforms.com",
-          "path": "/home/mike/apps/websites/skunkforms",
-          "remote": "git@github.com:skunkceo/skunkforms.com.git",
-          "branchPrefix": "seo"
-        },
-        {
-          "name": "skunkpages.com",
-          "path": "/home/mike/apps/websites/skunkpages",
-          "remote": "git@github.com:skunkceo/skunkpages.com.git",
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
           "branchPrefix": "seo"
         }
       ]
@@ -97,15 +67,9 @@
       "emoji": "📈",
       "repositories": [
         {
-          "name": "skunkglobal.com",
-          "path": "/home/mike/apps/websites/skunkglobal",
-          "remote": "git@github.com:skunkceo/skunkglobal.com.git",
-          "branchPrefix": "marketing"
-        },
-        {
-          "name": "marketing.skunkglobal.com",
-          "path": "/home/mike/apps/websites/growth-marketing",
-          "remote": "git@github.com:skunkceo/growth-marketing.git",
+          "name": "main-site",
+          "path": "~/apps/websites/main-site",
+          "remote": "git@github.com:yourorg/main-site.git",
           "branchPrefix": "marketing"
         }
       ]

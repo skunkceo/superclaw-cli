@@ -92,7 +92,7 @@ This agent maintains memory specific to:
 # For technical SEO work
 create-agent-sandbox.sh seo-specialist task-{id} skunkglobal.com
 
-# Work in: /mnt/HC_Volume_104694326/agent-sandboxes/seo-specialist-task-{id}/
+# Work in: ~/.superclaw/agent-sandboxes/seo-specialist-task-{id}/
 # Branch: seo/{task-id}-{description}
 # Max size: 500MB
 ```

@@ -80,7 +80,7 @@ This agent maintains memory specific to:
 # Create sandbox for this agent
 create-agent-sandbox.sh crm-engineer task-{id} skunkcrm-pro
 
-# Work in: /mnt/HC_Volume_104694326/agent-sandboxes/crm-engineer-task-{id}/
+# Work in: ~/.superclaw/agent-sandboxes/crm-engineer-task-{id}/
 # Branch: crm/{task-id}-{description}
 # Max size: 500MB
 ```

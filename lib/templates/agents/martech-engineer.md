@@ -76,7 +76,7 @@ This agent maintains memory specific to:
 # Create sandbox for this agent
 create-agent-sandbox.sh martech-engineer task-{id} skunkglobal.com
 
-# Work in: /mnt/HC_Volume_104694326/agent-sandboxes/martech-engineer-task-{id}/
+# Work in: ~/.superclaw/agent-sandboxes/martech-engineer-task-{id}/
 # Branch: martech/{task-id}-{description}
 # Max size: 1GB
 ```
