@@ -35,7 +35,7 @@ superclaw pro install <your-license-key>
 - Workspace file browser
 - Error tracking
 
-**Pro Tier** (requires license from [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)):
+**Pro Tier** (requires license from [skunkglobal.com](https://skunkglobal.com/superclaw-dashboard-pro/checkout?plan=monthly)):
 - Smart Router - AI model selection and routing
 - Settings - Advanced configuration
 - Team - Multi-user management
@@ -84,7 +84,7 @@ superclaw pro install <your-license-key>
 
 **Upgrading to Pro:**
 
-1. Purchase license from [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)
+1. Purchase license from [skunkglobal.com](https://skunkglobal.com/superclaw-dashboard-pro/checkout?plan=monthly)
 2. `superclaw pro install <license-key>` - Validates license, downloads Pro package
 3. Pro features automatically merge into your dashboard
 4. Restart dashboard to see new features
@@ -153,7 +153,7 @@ MIT License - See LICENSE file for details
 
 - Dashboard (Free): [github.com/skunkceo/superclaw-dashboard](https://github.com/skunkceo/superclaw-dashboard)
 - CLI: [github.com/skunkceo/superclaw-cli](https://github.com/skunkceo/superclaw-cli)
-- Purchase Pro: [skunkglobal.com](https://skunkglobal.com/checkout?product=superclaw-pro)
+- Purchase Pro: [skunkglobal.com](https://skunkglobal.com/superclaw-dashboard-pro/checkout?plan=monthly)
 - OpenClaw: [github.com/openclaw/openclaw](https://github.com/openclaw/openclaw)
 
 ## Support
